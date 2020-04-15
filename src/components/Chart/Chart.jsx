@@ -3,7 +3,7 @@ import { fetchDailyData } from "../../api";
 import { Line, Bar } from "react-chartjs-2";
 import styles from "./Chart.module.css";
 
-const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
+const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
               " rgba(0, 225, 0, 0.5)",
               "rgba(225, 0, 0, 0.5)",
             ],
-            data: [confirmed.value, recovered.value, deaths.value]
+            data: [confirmed.value, recovered.value, deaths.value],
           },
         ],
       }}
@@ -61,7 +61,9 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
     />
   ) : null;
 
-    return <div className={styles.container}>{country ? barChart: lineChart}</div>;
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 };
 
 export default Chart;
