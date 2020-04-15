@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NativeSelect, FormControl, Typography } from "@material-ui/core";
+import { NativeSelect, FormControl } from "@material-ui/core";
 import styles from "./CountryPicker.module.css";
 import { fetchCountries } from "../../api";
 const CountryPicker = ({ handleCountryChange }) => {
@@ -12,7 +12,7 @@ const CountryPicker = ({ handleCountryChange }) => {
 
     fetchAPI();
   }, [setFetchedCountries]);
-  console.log(fetchedCountries);
+  
 
   return (
     <FormControl className={styles.formControl}>
